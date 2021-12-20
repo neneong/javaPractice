@@ -9,7 +9,6 @@ public class SportsCar extends Car {
 	boolean checkMaxSpeed(double maxSpeed) {
 		{
 			if (maxSpeed > MAX_SPEED) {
-				System.out.println("error");
 				return true;
 			} else
 				return false;
