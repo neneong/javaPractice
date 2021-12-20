@@ -8,7 +8,7 @@ public class SportsCar extends Car {
 	@Override
 	boolean checkMaxSpeed(double maxSpeed) {
 		{
-			if (maxSpeed > 300) {
+			if (maxSpeed > MAX_SPEED) {
 				System.out.println("error");
 				return true;
 			} else

@@ -8,6 +8,6 @@ public class CarMain {
 //		car1.stop();
 //		Car car2 = car1;
 		Car.MAX_SPEED = 300;
-		SportsCar sportsCar1 = new SportsCar("빨강", 2, "람보르기니", 400);
+		SportsCar sportsCar1 = new SportsCar("빨강", 2, "람보르기니", 300);
 	}
 }
