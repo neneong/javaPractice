@@ -9,11 +9,13 @@ public abstract class Car {
 	boolean power;
 	public static int MAX_SPEED = 150;
 	
-	public Car(String color, int seat, String model, double maxSpeed){
+	abstract boolean checkMaxSpeed(double maxSpeed);
+
+	public Car(String color, int seat, String model, double maxSpeed) {
 		super();
-		//생성자의 스택에 저장된 color, seat, model, maxSpeed의 값을
+		// 생성자의 스택에 저장된 color, seat, model, maxSpeed의 값을
 		// 힙에 저장된 객체의 멤버변수에 저장한다.
-		if(checkMaxSpeed(maxSpeed)) {
+		if (checkMaxSpeed(maxSpeed)) {
 			System.out.println("최고속도를 넘었습니다.");
 			return;
 		}
@@ -23,34 +25,27 @@ public abstract class Car {
 		this.maxSpeed = maxSpeed;
 		System.out.println("새로운 자동차  " + model + "가 만들어졌습니다.");
 	}
-	boolean checkMaxSpeed(double maxSpeed) {
-		if(maxSpeed>MAX_SPEED) {
-			System.out.println("error");
-			return true;
-		}
-		else
-			return false;
-	}
-	
+
 	void power() {
 		power = !power;
 	}
-	
+
 	void move(double speed) {
-		if(!power) {
+		if (!power) {
 			System.out.println("시동이 꺼져있습니다");
 			return;
 		}
-		if(speed>maxSpeed) {
+		if (speed > maxSpeed) {
 			System.out.println("최고속도보다 더 빠르게 움직일 수 없습니다");
 			return;
 		}
 		this.speed = speed;
-		System.out.println(speed+"km로 움직입니다");
+		System.out.println(speed + "km로 움직입니다");
 	}
+
 	void stop() {
 		speed = 0;
 		System.out.println("정지했습니다.");
 	}
-	
+
 }
